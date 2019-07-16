@@ -1,6 +1,6 @@
 <?php
 
-namespace Chocofamily\Pathcorrelation\Middleware;
+namespace Chocofamily\Pathcorrelation\Http;
 
 use Closure;
 use Illuminate\Support\Str;
@@ -24,7 +24,7 @@ class CorrelationId
         $this->getInstance();
     }
     /**
-     * Handle an incoming Preflight request.
+     * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure $next
