@@ -14,8 +14,7 @@ class CorrelationIdServiceProvider extends BaseServiceProvider
      * @return void
      */
     public function register()
-    {
-    }
+    {}
 
     /**
      *
@@ -25,5 +24,8 @@ class CorrelationIdServiceProvider extends BaseServiceProvider
         $this->app->bind(CorrelationId::class, function ($app) {
             return new CorrelationId();
         });
+
+        $kernel = $this->app['Illuminate\Contracts\Http\Kernel'];
+        $kernel->pushMiddleware(CorrelationId::class);
     }
 }

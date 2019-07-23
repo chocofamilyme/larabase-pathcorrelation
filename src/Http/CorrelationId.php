@@ -21,7 +21,7 @@ class CorrelationId
 
     public function __construct()
     {
-        $this->getInstance();
+        //$this->getInstance();
     }
     /**
      * Handle an incoming request.
