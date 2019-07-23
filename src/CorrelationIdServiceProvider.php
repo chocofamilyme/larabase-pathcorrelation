@@ -15,11 +15,6 @@ class CorrelationIdServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        //$this->app->register(CorrelationId::class);
-        //$this->app->make('CorrelationId');
-        $this->app->bind(CorrelationId::class, function ($app) {
-            return new CorrelationId();
-        });
     }
 
     /**
@@ -27,10 +22,8 @@ class CorrelationIdServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        /** @var \Illuminate\Foundation\Http\Kernel $kernel */
-         $kernel = $this->app->make(Kernel::class);
-        if (! $kernel->hasMiddleware(CorrelationId::class)) {
-            $kernel->prependMiddleware(CorrelationId::class);
-        }
+        $this->app->bind(CorrelationId::class, function ($app) {
+            return new CorrelationId();
+        });
     }
 }
