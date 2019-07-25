@@ -1,5 +1,5 @@
 {
-    "name": "chocofamilyme/laravel-pathcorrelation",
+    "name": "chocofamilyme/larabase-pathcorrelation",
     "description": "Библиотека для отслеживание запроса между сервисами",
     "keywords": [
         "correlation",
@@ -14,7 +14,7 @@
     "license": [
         "BSD-3-Clause"
     ],
-    "homepage": "https://github.com/chocofamilyme/pathcorrelation",
+    "homepage": "https://github.com/chocofamilyme/larabase-pathcorrelation",
     "authors": [
         {
             "name": "IT Chocolife.me",

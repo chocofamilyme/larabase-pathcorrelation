@@ -25,7 +25,17 @@ class CorrelationIdServiceProvider extends BaseServiceProvider
             return new CorrelationId();
         });
 
+        $this->registerMiddleware(CorrelationId::class);
+    }
+
+    /**
+     * Register the Middleware
+     *
+     * @param  string $middleware
+     */
+    protected function registerMiddleware($middleware)
+    {
         $kernel = $this->app['Illuminate\Contracts\Http\Kernel'];
-        $kernel->pushMiddleware(CorrelationId::class);
+        $kernel->pushMiddleware($middleware);
     }
 }
